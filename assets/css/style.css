@@ -1,0 +1,395 @@
+/* Global ---------------------------- */
+:root {
+    /* Primary */
+    --light-red: hsl(356, 100%, 66%); /*CTA text*/ 
+    --very-light-red: hsl(355, 100%, 74%); /*CTA hover background*/
+    --very-dark-blue: hsl(208, 49%, 24%); /*headings*/
+
+    /* Neutral */
+    --grayish-blue: hsl(240, 2%, 79%); /*footer text*/
+    --very-dark-grayish-blue: hsl(207, 13%, 34%); /*body copy*/
+    --very-dark-black-blue: hsl(240, 10%, 16%); /*footer background*/
+
+    /* Gradient */
+
+    /* Background gradient - body */
+    --very-dark-gray-blue: hsl(237, 17%, 21%);
+    --very-dark-desaturated-blue:  hsl(237, 23%, 32%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Overpass', sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+/* Header -------------------------- */
+header {
+    height: 89vh;
+    padding: 60px 0;
+    background-image: url('../images/bg-pattern-intro-mobile.svg'), linear-gradient(to bottom right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    background-position: -340px -240px, center;
+    background-repeat: no-repeat;
+    background-size: 1330px, 100%;
+    position: relative;
+    border-radius: 0 0 0 100px;
+}
+
+header nav {
+    margin: 0 22px;
+}
+
+header nav button {
+    background: none;
+    border: none;
+}
+
+header nav button.toggle-menu.active img {
+    content: url('../images/icon-close.svg');
+}
+
+header nav div.nav-brand {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+header div.area-nav {
+    position: absolute;
+    opacity: 0;
+    left: -99999px;
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    padding: 18px;
+    overflow: hidden;
+    transform: translateY(-30px);
+    transition: transform 0.75s ease, opacity 0.75s ease;
+}
+
+header div.area-nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    position: initial;
+}
+
+header div.area-nav ul.nav {
+    list-style: none;
+    padding-bottom: 22px;
+    border-bottom: 0.8px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.product, .company, .connect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product button, .company button, .connect button {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.15em;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    justify-content: center;
+    width: 100%;
+}
+
+.product img, .company img, .connect img {
+    margin-left: 5px;
+    transform: rotate(0);
+    transition: 0.3s ease;
+}
+
+.product.active button, .company.active button, .connect.active button {
+    color: var(--very-dark-grayish-blue);
+}
+
+.product.active button img, .company.active button img, .connect.active button img {
+    transform: rotate(180deg);
+}
+
+.product ul, .company ul, .connect ul {
+    position: absolute;
+    left: -9999px;
+    opacity: 0; 
+    background: rgba(200, 200, 203, 0.35);
+    width: 100%;
+    max-height: 0;
+    padding: 16px 0;
+    list-style: none;
+    margin-top: 10px;
+    transition: opacity 1.2s, max-height 1.2s;
+}
+
+.product.active ul, .company.active ul, .connect.active ul {
+    position: initial;
+    opacity: 1; 
+    max-height: 500px;
+}
+
+.product ul li, .company ul li, .connect ul li {
+    text-align: center;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+.product ul li a, .company ul li a, .connect ul li a {
+    text-decoration: none;
+    color: var(--very-dark-grayish-blue);
+}
+
+header .sign {
+    margin: 16px 0 10px 0;
+}
+
+header .sign button {
+    margin: 0 auto;
+    display: block;
+    font-size: 1.15em;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    padding: 15px 40px;
+}
+
+header .sign button.signup-button {
+    background: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    color: #fff;
+    border-radius: 30px;
+    margin-top: 4px;
+}
+
+header .header-content {
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+header .header-content h1, header .header-content p {
+    color: #fff;
+    font-family: 'Overpass', sans-serif;
+    text-align: center;
+}
+
+header .header-content h1 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+header .header-content p {
+    font-size: 1.05em;
+    margin-bottom: 40px;
+}
+
+header .header-content .content-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+header .header-content .content-buttons button {
+    margin: 0 10px;
+    padding: 14px 10px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: 'Overpass', sans-serif;
+    color: var(--light-red);
+    background: #fff;
+    width: 140px;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+
+
+header .header-content .content-buttons button:first-child:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+}
+
+header .header-content .content-buttons button:last-child {
+    color: #fff;
+    background: none;
+}
+
+header .header-content .content-buttons button:last-child:hover {
+    color: var(--light-red);
+    background: #fff;
+    border: none;
+}
+
+/* Designed for the future ------------------------------- */
+#designed-future {
+    margin: 100px 22px 50px 22px;
+    overflow: hidden;
+}
+
+#designed-future h1 {
+    text-align: center;
+    font-size: 1.6em;
+    color: var(--very-dark-blue);
+}
+
+
+#designed-future div.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+#designed-future div img {
+    width: 122%;
+    margin: 46px 0;
+}
+
+#designed-future div h1 {
+    margin: 0 50px 20px 50px;
+}
+
+#designed-future div p {
+    text-align: center;
+    padding: 0 16px;
+    color: var(--very-dark-grayish-blue);
+    margin-bottom: 30px;
+    line-height: 1.6em;
+}
+
+/* State of the Art -------------------------- */
+#state-art {
+    background: url('../images/bg-pattern-circles.svg') no-repeat, linear-gradient(to bottom, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+    background-position: center -35vh, 0;
+    background-size: 158vw;
+    border-radius: 0 80px;
+    padding-bottom: 100px;
+    margin-top: 230px;
+}
+
+#state-art img {
+    width: 100%;
+    margin-top: -180px;
+}
+
+#state-art div.content {
+    color: #fff;
+    padding: 0 34px;
+}
+
+#state-art div.content h1 {
+    text-align: center;
+    font-size: 2.3em;
+    margin-bottom: 28px;
+}
+
+#state-art div.content p {
+    text-align: center;
+    line-height: 1.6em;
+    font-weight: lighter;
+}
+
+/* Free Open Simple -------------------------- */
+#free-open-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+#free-open-simple img {
+    width: 132%;
+    margin: 70px 0 40px 0;
+}
+
+#free-open-simple div.content {
+    padding: 0 40px;
+}
+
+#free-open-simple div.content h1 {
+    color: var(--very-dark-blue);
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+
+#free-open-simple div.content p {
+    line-height: 1.6em;
+    margin-bottom: 32px;
+    color: var(--very-dark-grayish-blue);
+}
+
+#free-open-simple div.content h1, #free-open-simple div.content p {
+    text-align: center;
+}
+
+/* Footer ----------------------------------- */
+footer {
+    background: var(--very-dark-black-blue);
+    font-family: 'Ubuntu', sans-serif;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 110px 0 0;
+}
+
+footer .logo {
+    margin-bottom: 80px;
+}
+
+footer nav ul {
+    list-style: none;
+}
+
+footer nav ul li p {
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: var(--grayish-blue);
+    display: block;
+}
+
+footer nav ul li ul {
+    margin-bottom: 50px;
+}
+
+footer nav ul li ul li {
+    margin-bottom: 12px;
+}
+
+footer nav ul li p, footer nav ul li a {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.15em;
+}
+
+footer div.attribution {
+    text-align: center;
+    font-size: 0.9em;
+    padding: 30px 40px 0 40px;
+}
+
+footer div.attribution a, footer {
+    color: rgba(255, 255, 255, 0.8);
+}
