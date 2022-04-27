@@ -114,6 +114,7 @@ header div.area-nav ul.nav {
 
 .product.active button, .company.active button, .connect.active button {
     color: var(--very-dark-grayish-blue);
+    text-decoration: underline;
 }
 
 .product.active button img, .company.active button img, .connect.active button img {
