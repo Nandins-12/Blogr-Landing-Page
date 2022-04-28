@@ -162,6 +162,7 @@
     /* Designed Future ------------------------------- */
     #designed-future {
         overflow: initial;
+        margin: 140px 22px 50px;
     }
 
     #designed-future div h1 {
@@ -206,6 +207,11 @@
     #state-art {
         padding: 0;
         height: 400px;
+        display: flex;
+        align-items: center;
+        background-position: -15vw -450px, center;
+        background-size: 960px;
+        margin-top: 18vw;
     }
 
     #state-art .container {
@@ -214,13 +220,34 @@
     }
 
     #state-art img {
-        width: auto;
-        margin: 0;
+        width: 60vw;
+        max-width: 552px;
+        margin-top: 40px;
     }
 
     #state-art div.content {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    #state-art div.content h1, #state-art div.content p {
+        text-align: start;
+    }
+
+    /* Free Open Simple -------------------------------- */
+    #free-open-simple {
+        margin-top: 12vw;
+    }
+    
+    #free-open-simple .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #free-open-simple .container img {
+        content: url('../images/illustration-laptop-desktop.svg');
+        width: 136%;
+        min-width: 300px;
     }
 }

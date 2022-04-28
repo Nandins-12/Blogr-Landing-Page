@@ -306,11 +306,14 @@ header .header-content .content-buttons button:last-child:hover {
 
 /* Free Open Simple -------------------------- */
 #free-open-simple {
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+#free-open-simple .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
-    overflow: hidden;
 }
 
 #free-open-simple img {
