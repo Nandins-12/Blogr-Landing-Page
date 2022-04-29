@@ -30,20 +30,3 @@ li_topics.forEach((li) => {
         }
     });
 });
-
-window.addEventListener('resize', () => {
-    for(let x = 0; x < 3; x++) {
-        if(li_topics[x] != li) {
-            li_topics[x].classList.remove('active');
-        }
-        
-        if (window.innerWidth >= 769) {
-            li_topics[x].querySelector('button svg path').style.stroke = 'rgba(255, 255, 255, 0.75)';
-            if(li.classList.contains('active')) {
-                li.querySelector('button svg path').style.stroke = '#fff';
-            } else {
-                li.querySelector('button svg path').style.stroke = 'rgba(255, 255, 255, 0.75)';
-            }
-        }
-    }
-});
