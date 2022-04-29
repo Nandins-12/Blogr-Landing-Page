@@ -71,6 +71,14 @@
         font-weight: 400;
         transition: none;
     }
+
+    .product button svg path, .company button svg path, .connect button svg path {
+        stroke: rgba(255, 255, 255, 0.75);
+    }
+
+    .product.active button svg path, .company.active button svg path, .connect.active button svg path {
+        stroke: #fff;
+    }
     
     .product button:hover, .company button:hover, .connect button:hover {
         transition: 0.3s ease;
