@@ -56,10 +56,6 @@
         align-items: center;
     }
 
-    header div.area-nav ul li {
-        display: inline-block;
-    }
-
     header div.area-nav ul li button {
         color: rgba(255, 255, 255, 0.75);
         font-size: 1.1em;
@@ -67,14 +63,17 @@
 
     .product, .company, .connect {
         position: relative;
+        display: inline-block;
     }
 
     .product button, .company button, .connect button {
         font-family: 'Ubuntu', sans-serif;
         font-weight: 400;
+        transition: none;
     }
-
+    
     .product button:hover, .company button:hover, .connect button:hover {
+        transition: 0.3s ease;
         color: #fff;
     }
 
@@ -113,10 +112,11 @@
 
     .product.active button, .company.active button, .connect.active button {
         color: #fff;
+        text-decoration: underline;
     }
 
-    header div.area-nav ul li button img {
-        content: url('../images/icon-arrow-light.svg');
+    header div.area-nav ul li button svg path {
+        stroke: rgba(255, 255, 255, 0.75);
     }
 
     header div.area-nav .sign {
@@ -237,7 +237,7 @@
 
     /* Free Open Simple -------------------------------- */
     #free-open-simple {
-        margin-top: 12vw;
+        margin-top: 10vw;
     }
     
     #free-open-simple .container {
@@ -247,7 +247,52 @@
 
     #free-open-simple .container img {
         content: url('../images/illustration-laptop-desktop.svg');
-        width: 136%;
+        width: 150%;
         min-width: 300px;
+        left: -24vw;
+        position: relative;
+        top: -30px;
+    }
+
+    #free-open-simple .container .content h1, #free-open-simple .container .content p {
+        text-align: start;
+    }
+
+    /* Footer ------------------------ */
+    footer {
+        display: block;
+    }
+
+    footer .logo {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    footer .container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    footer .container nav ul:first-child {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    footer .container nav ul:first-child p, 
+    footer .container nav ul:last-child li a {
+        text-align: start;
+    }
+
+    footer .container nav ul:last-child li a:hover {
+        text-decoration: underline;
+    }
+
+    footer .container .attribution {
+        font-size: 0.8em;
+        /* margin-top: 120px; */
+        grid-column: 1 / 3;
     }
 }

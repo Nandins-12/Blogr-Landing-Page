@@ -50,6 +50,10 @@ header nav button {
     border: none;
 }
 
+header nav button.toggle-menu img {
+    user-select: none;
+}
+
 header nav button.toggle-menu.active img {
     content: url('../images/icon-close.svg');
 }
@@ -71,6 +75,7 @@ header div.area-nav {
     overflow: hidden;
     transform: translateY(-30px);
     transition: transform 0.75s ease, opacity 0.75s ease;
+    z-index: 1;
 }
 
 header div.area-nav.active {
@@ -91,6 +96,7 @@ header div.area-nav ul.nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .product button, .company button, .connect button {
@@ -106,7 +112,7 @@ header div.area-nav ul.nav {
     width: 100%;
 }
 
-.product img, .company img, .connect img {
+.product svg, .company svg, .connect svg {
     margin-left: 5px;
     transform: rotate(0);
     transition: 0.3s ease;
@@ -114,10 +120,9 @@ header div.area-nav ul.nav {
 
 .product.active button, .company.active button, .connect.active button {
     color: var(--very-dark-grayish-blue);
-    text-decoration: underline;
 }
 
-.product.active button img, .company.active button img, .connect.active button img {
+.product.active button svg, .company.active button svg, .connect.active button svg {
     transform: rotate(180deg);
 }
 
@@ -128,16 +133,17 @@ header div.area-nav ul.nav {
     background: rgba(200, 200, 203, 0.35);
     width: 100%;
     max-height: 0;
-    padding: 16px 0;
     list-style: none;
     margin-top: 10px;
-    transition: opacity 1.2s, max-height 1.2s;
+    transition: opacity 0.6s, max-height 1s, padding 0.6s;
+    overflow: hidden;
 }
 
 .product.active ul, .company.active ul, .connect.active ul {
     position: initial;
     opacity: 1; 
     max-height: 500px;
+    padding: 16px 0;
 }
 
 .product ul li, .company ul li, .connect ul li {
@@ -179,6 +185,7 @@ header .header-content {
     flex-direction: column;
     justify-content: center;
     padding: 0 40px;
+    transition: opacity 0.75s ease, transform 0.75s ease;
 }
 
 header .header-content h1, header .header-content p {
@@ -346,10 +353,13 @@ footer {
     background: var(--very-dark-black-blue);
     font-family: 'Ubuntu', sans-serif;
     padding: 80px 0;
+    border-radius: 0 110px 0 0;
+}
+
+footer .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 0 110px 0 0;
 }
 
 footer .logo {
